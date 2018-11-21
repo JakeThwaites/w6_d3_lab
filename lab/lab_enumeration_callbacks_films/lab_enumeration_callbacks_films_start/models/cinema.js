@@ -73,6 +73,12 @@ Cinema.prototype.totalLengthAllFilms = function() {
  return totalLength;
 };
 
+Cinema.prototype.filterByProperty = function (property, value) {
+  let filteredFilms = this.films.filter((film) => {
+    return film[property] === value;
+  });
+  return filteredFilms;
+};
 
 
 module.exports = Cinema;
