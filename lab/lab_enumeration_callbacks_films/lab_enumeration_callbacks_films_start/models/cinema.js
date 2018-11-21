@@ -26,4 +26,30 @@ Cinema.prototype.filterFilmsByGenre = function (genre) {
   // return filmsOfGenre;
 };
 
+Cinema.prototype.checkFilmsByYear = function(year) {
+  // let number = this.films.reduce((accum, film) => {
+  //   if (film.year === year) {
+  //     accum ++;
+  //   };
+  // }, 0);
+  // let result;
+  // if (number) {
+  //   result = true;
+  // } else {
+  //   result = false;
+  // }
+  // return result;
+
+  let filmExists = false;
+
+  this.films.forEach( (film) =>  {
+    if (film.year === year) {
+      filmExists = true;
+    }
+  })
+
+  return filmExists;
+
+};
+
 module.exports = Cinema;
