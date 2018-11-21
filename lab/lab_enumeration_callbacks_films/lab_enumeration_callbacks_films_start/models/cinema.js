@@ -52,4 +52,23 @@ Cinema.prototype.checkFilmsByYear = function(year) {
 
 };
 
+Cinema.prototype.checkFilmsOverLength = function (length) {
+  let overLength = false;
+
+  const films = this.films.filter((film) => {
+    return film.length > length;
+  });
+
+  if (films.length) {
+    overLength = true;
+  };
+
+  return overLength;
+}
+
+
+// const totalLength = this.films.reduce((accu, film) => {
+//   return accu + film.length
+// }, 0);
+
 module.exports = Cinema;
